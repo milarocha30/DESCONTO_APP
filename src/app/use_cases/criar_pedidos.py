@@ -23,10 +23,11 @@ class CriarPedido:
         self.pedido_gateway.salvar(pedido, tipo_desconto)
         
         return CriarPedidoOutputDTO(
-            cliente = input_dto.cliente,
-            valor_original= input_dto.valor_original,
-            valor_desconto= pedido.valor_desconto(),
-            valor_final=pedido.valor_final()
+            cliente=input_dto.cliente,
+            valor_original=input_dto.valor_original,
+            valor_desconto=pedido.valor_desconto(),
+            valor_final=pedido.valor_final(),
+            tipo_desconto=tipo_desconto
         )
 
     def listar_pedidos(self) -> list[CriarPedidoOutputDTO]:
